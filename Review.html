@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    body{
+      background: #ddd;
+    }
+    main{
+      margin:.9rem;
+      background: white;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: .8rem;
+    }
+    button{
+      padding: .6rem;
+    }
+    img{
+      border-radius: 50%;
+    }
+    .group{
+      margin-top: 1rem;
+    }
+  </style>
+  <title>Review js</title>
+</head>
+<body>
+  <main>
+    <img src="" alt="" width="200">
+    <h3></h3>
+    <span></span>
+    <p></p>
+    <div class="group">
+      <button class="p"><</button>
+      <button class="r">random</button>
+      <button class="n">></button>
+    </div>
+  </main>
+  
+  <script>
+    let h3 = document.querySelector("h3")
+    let span = document.querySelector("span")
+    let p = document.querySelector("p")
+    let img = document.querySelector("img")
+    const data = [
+      {nama:"Eva wijayanti", profesi:"writer", img:"p1.jpg", review:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium facere, illum quae facilis voluptas, beatae. Error libero eaque, tempora eos. Tenetur sequi earum amet sint quisquam, ullam doloremque officiis magni asperiores."},
+      {nama:"Jack Maria", profesi:"fisherman", img:"p1.jpg", review:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium facere, illum quae facilis voluptas, beatae. Error libero eaque, tempora eos. Tenetur sequi earum amet sint quisquam, ullam doloremque officiis magni asperiores."},
+      {nama:"Jonhy dick", profesi:"Actor", img:"p1.jpg", review:"Facilis voluptas, beatae. Error libero eaque, tempora eos. Tenetur sequi earum amet sint quisquam, ullam doloremque officiis magni asperiores."},
+      {nama:"Fajar susilo", profesi:"Enginer", img:"p1.jpg", review:"Praesentium facere, illum quae facilis voluptas, beatae. Error libero eaque, tempora eos. Tenetur sequi earum amet sint quisquam, ullam doloremque officiis magni asperiores."}
+      ]
+      
+    const n = document.querySelector(".n")
+    const pr = document.querySelector(".p")
+    const r = document.querySelector(".r")
+    
+    let nth = 0
+    img.setAttribute("src", `img/p1.jpg`)
+    h3.innerText = data[0].nama
+    span.innerText = data[0].profesi
+    p.innerText = data[0].review
+    
+    n.addEventListener("click", ()=>{
+      nth = nth+1
+      img.setAttribute("src", `img/p${nth+1}.jpg`)
+      h3.innerText = data[nth].nama
+      span.innerText = data[nth].profesi
+      p.innerText = data[nth].review
+    })
+    pr.addEventListener("click", ()=>{
+      nth = nth-1
+      img.setAttribute("src", `img/p${nth+1}.jpg`)
+      h3.innerText = data[nth].nama
+      span.innerText = data[nth].profesi
+      p.innerText = data[nth].review
+      
+      console.log(nth)
+    })
+    
+    r.addEventListener("click", ()=>{
+      let rand = Math.floor(Math.random() * data.length)
+      nth = rand
+      img.setAttribute("src", `img/p${nth+1}.jpg`)
+      h3.innerText = data[nth].nama
+      span.innerText = data[nth].profesi
+      p.innerText = data[nth].review
+    })
+    
+    
+  </script>
+</body>
+</html>

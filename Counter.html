@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    main{
+      height:100vh ;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    button{
+      padding: 2rem;
+    }
+  </style>
+  <title>Counter js</title>
+</head>
+<body>
+  <main>
+    <h2>Counter</h2>
+    <h3>0</h3>
+    <div class="group">
+      <button class="d">-</button>
+      <button class="p">+</button>
+      <button class="r">Reset</button>
+    </div>
+  </main>
+  
+  <script>
+    const p = document.querySelector('.p')
+    const d = document.querySelector('.d')
+    const r = document.querySelector('.r')
+    let h3 = document.querySelector("h3")
+    let n = 0
+    
+    r.addEventListener("click", function(){
+      n = 0
+      h3.innerText = n
+    })
+    
+    p.addEventListener("click", function(){
+      n = n+1
+      h3.innerText = n
+    })
+    
+    d.addEventListener("click", () => {
+      n = n-1
+      h3.innerText = n
+    })
+  </script>
+</body>
+</html>

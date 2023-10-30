@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    body {
+      display: flex;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      height: 100vh;
+    }
+
+    button {
+      padding: 1rem;
+      background: none;
+      border: 2px solid #ddd;
+      border-radius: .8rem;
+    }
+  </style>
+  <title>Colors</title>
+</head>
+
+<body>
+  <main>
+    <p>Background: <span>#FFFFFF</span></p>
+    <button>Click</button>
+  </main>
+
+  <script>
+    const btn = document.querySelector("button")
+    let span = document.querySelector("span")
+
+    // Membuat hex color random
+    function randomHexColor() {
+      let letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    btn.addEventListener("click", function () {
+      let randomColor = randomHexColor();
+      span.innerText = randomColor
+      document.body.style.background = randomColor
+    })
+  </script>
+</body>
+
+</html>

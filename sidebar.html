@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    nav {
+      display: flex;
+      justify-content: end;
+      padding: 1rem;
+      background: #fbfbfb;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    .toggle {
+      display: flex;
+      gap: .3rem;
+      flex-direction: column;
+      cursor: pointer;
+      background: #dadada;
+      padding: .4rem;
+      border-radius: .3rem;
+    }
+
+    .toggle span {
+      width: 1.3rem;
+      background: #000;
+      height: .1rem;
+    }
+
+    aside {
+      display: none;
+      flex-direction: column;
+      top: 0;
+      height: 100vh;
+      position: absolute;
+      background: #fff;
+      width: 20%;
+      padding: 2rem;
+      box-sizing: border-box;
+      box-shadow: 2px 2px 22px -5px rgba(0, 0, 0, 0.53);
+    }
+
+    .group {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .show {
+      display: flex;
+    }
+
+    .close {
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: red;
+    }
+
+    li {
+      margin: .3rem 0;
+      padding: .7rem;
+      display: block;
+      border-radius: .4rem;
+      cursor: pointer;
+    }
+
+    li a {
+      display: block;
+      font-weight: bold;
+      color: rgb(66, 66, 66);
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+  <aside>
+    <div class="group">
+      <h2>Sidebar</h2>
+      <span class="close">&times;</span>
+    </div>
+    <ul>
+      <li><a href="">Menu-1</a></li>
+      <li><a href="">Menu-2</a></li>
+      <li><a href="">Menu-3</a></li>
+      <li><a href="">Menu-4</a></li>
+    </ul>
+  </aside>
+
+  <script>
+    const toggle = document.querySelector(".toggle")
+    const close = document.querySelector(".close")
+    const aside = document.querySelector("aside")
+
+    toggle.addEventListener("click", function () {
+      aside.classList.add("show")
+    })
+
+    close.addEventListener("click", function () {
+      aside.classList.remove("show")
+    })
+  </script>
+</body>
+
+</html>

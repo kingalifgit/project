@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar project js</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+      list-style: none;
+      color: darkslategray;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      padding: 1rem 4rem;
+      align-items: center;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    li a {
+      display: flex;
+      padding: .6rem .8rem;
+      border-radius: .4rem;
+    }
+
+    .link li:hover a {
+      background: #bae6f5;
+      color: #ffffff;
+    }
+
+    .brand {
+      font-size: x-large;
+    }
+
+    .toggle {
+      display: none;
+    }
+
+    a {
+      font-weight: bolder;
+    }
+
+    ul {
+      display: flex;
+      gap: 1.4rem;
+    }
+
+    @media only screen and (max-width: 600px) {
+
+      nav {
+        padding: 1.2rem;
+        justify-content: space-between;
+        position: relative;
+      }
+
+      .link {
+        display: none;
+        position: absolute;
+        background: #ffffff;
+        flex-direction: column;
+        width: 100%;
+        top: 4rem;
+        left: 0;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+
+      .show {
+        display: flex;
+      }
+
+      .link li {
+        padding-left: 1rem;
+        font-weight: lighter;
+      }
+
+      .link li:last-child {
+        padding-bottom: 1rem;
+      }
+
+      .link li:first-child {
+        padding-top: 1rem;
+      }
+
+      #icon {
+        display: none;
+      }
+
+      .toggle {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        gap: .2rem;
+      }
+
+      .toggle span {
+        width: 1.3rem;
+        background: #000;
+        height: .1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="/" class="brand">Navbar</a>
+    <ul class="link show">
+      <li><a href="">Home</a></li>
+      <li><a href="">About</a></li>
+      <li><a href="">Project</a></li>
+      <li><a href="">Contact</a></li>
+    </ul>
+    <ul id="icon">
+      <li><a href="">🦑</a></li>
+      <li><a href="">😾</a></li>
+      <li><a href="">🐯</a></li>
+    </ul>
+    <div class="toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <script>
+    const toggle = document.querySelector(".toggle")
+    const link = document.querySelector(".link")
+    link.classList.remove("show")
+
+
+    toggle.addEventListener('click', function () {
+      link.classList.toggle("show")
+    })
+  </script>
+</body>
+
+</html>
