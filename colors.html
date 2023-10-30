@@ -5,34 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <style>
-    body {
-      display: flex;
-    }
-
-    main {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin: 0 auto;
-      height: 100vh;
-    }
-
-    button {
-      padding: 1rem;
-      background: none;
-      border: 2px solid #ddd;
-      border-radius: .8rem;
-    }
-  </style>
-  <title>Colors</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="h-screen flex justify-center items-center text-center delay-200">
   <main>
-    <p>Background: <span>#FFFFFF</span></p>
-    <button>Click</button>
+    <p class="mb-4 bg-slate-300 p-3 rounded-full px-5 shadow">Background: <span>#FFFFFF</span></p>
+    <button class="border bg-emerald-600 p-1 text-xs text-white font-bold rounded-full shadow px-5">Click</button>
   </main>
 
   <script>
